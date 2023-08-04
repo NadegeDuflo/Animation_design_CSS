@@ -11,13 +11,10 @@ body{
     font-family: 'Poppins',sans-serif;
 
 }
-html{
-    font-size: 62.5%;
-}
-/* a{
+a{
     text-decoration: none;
     font-weight: bold;
-} */
+}
 
 header{
 
@@ -52,10 +49,14 @@ h1{
     position: relative;
 }
 
+.box4, .box5 , .box6{
+  background-color: #222;
+  border:15px solid #c775b2;
+}
 
 /* case 1 Animation carte-coeur */
 
-.card{
+.heart-card{
     width: 0;
     height: 0;
     border-top: 100px solid #eee;
@@ -128,23 +129,9 @@ h3{
     to{transform: rotate(-5deg);}
 }
 
-/* case 3 carré pivotant */
 
-.loading{
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 12px;
-    animation: loading 2s linear infinite;
-}
 
-@keyframes loading{
-    0% {transform: rotateX(0deg) rotateY(0deg);}
-    50% {transform: rotateX(0deg) rotateY(180deg);}
-    100% {transform: rotateX(180deg) rotateY(180deg);}
-}
-
-/* case 4 pulse */
+/* case 3 pulse */
 
 .box3 {
     z-index: -1;
@@ -185,10 +172,6 @@ h3{
 
 /* case 4 dé lumineux tournant */
 
-.box4 {
-    background-color: #111;
-    border:15px solid #c775b2;
-}
 .scene {
     width: 200px;
     height: 200px;
@@ -200,7 +183,7 @@ h3{
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: spin 3s infinite linear;
+    animation: spin 6s infinite linear;
 }
   @keyframes spin {
     100% {
@@ -313,8 +296,6 @@ grid-area: five;
 /* case 5 effet glitch */
 
 .box5 {
-    background-color: #111;
-    border: 15px solid #c775b2;
     padding: 70px;
     display: block;
     text-align: center;
@@ -474,6 +455,148 @@ grid-area: five;
     }
   }
 
+
+  /* case 6 effet néon */
+
+  .box6 {
+    position: relative;
+  }
+
+  .neon-card {
+    min-width: 330px;
+    position: relative;
+    padding: 20px 20px 40px;
+    box-shadow:
+    0 0 10vw  0vw #7476ff,   
+    0 0   2vw  0.4vw #0408fb,
+    
+    inset 0 0 .5vw  .2vw #7476ff,
+    inset 0 0 0.2vw  0.2vw #3134ff,
+    inset 0 0 .25vw  0.2vw #0408fb;
+    border-radius: 22px;
+}
+
+.neon-card h2, .neon-card span {
+  margin-top: 35px;
+  margin-left: 60px;
+}
+
+.neon-card h2 {
+
+    font-family: Mali, sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #f1f1f1e3;
+    text-shadow:
+    .1vw 0vw .25vw #bc74ff, 
+    .15vw 0vw .25vw #bc74ff, 
+
+
+    .1vw 0vw  .1vw #b331ff, 
+    .15vw 0vw  .1vw #b331ff, 
+    .4vw 0vw  .1vw #b331ff,
+
+    .1vw 0vw   2vw #b331ff, 
+    .15vw 0vw   2vw #b331ff, 
+    .4vw 0vw   2vw #b331ff, 
+
+    .1vw 0vw   1vw #7704fb, 
+    .15vw 0vw   1vw #7704fb, 
+    .4vw 0vw   5vw #7704fb, 
+
+    .1vw 0vw   5vw #7704fb, 
+    .15vw 0vw  20vw #7704fb, 
+    .4vw 0vw  10vw #7704fb,
+    
+    .1vw 0vw  10vw #7704fb, 
+    .15vw 0vw  30vw #7704fb, 
+    .4vw 0vw  10vw #7704fb;
+
+    animation: blink 2s infinite alternate;
+}
+
+
+.neon-card span {
+    font-family: Raleway, sans-serif;
+    padding-left: 10px;
+    font-size: 27px;
+    letter-spacing: 5px;
+    color: #f1f1f1cb;
+    text-shadow:
+    .1vw 0vw .25vw #8bff74, 
+    .125vw 0vw .25vw #8bff74, 
+
+    .1vw 0vw  .1vw #8eff31, 
+    .125vw 0vw  .1vw #8eff31, 
+    .15vw 0vw  .1vw #8eff31,
+
+    .1vw 0vw   2vw #8eff31, 
+    .125vw 0vw   2vw #8eff31, 
+    .15vw 0vw   2vw #8eff31, 
+
+    .1vw 0vw   1vw #52fb04, 
+    .125vw 0vw   1vw #52fb04, 
+    .15vw 0vw   5vw #52fb04, 
+
+    .1vw 0vw   5vw #52fb04, 
+    .125vw 0vw  20vw #52fb04, 
+    .15vw 0vw  10vw #52fb04;
+
+}
+
+.neon-card img {
+    position: absolute;
+    top: -90px;
+    left: -60px;
+    width: 220px;
+    
+    filter: 
+    drop-shadow(0 0.15vw 0.30vw #ff0ea3)
+    drop-shadow(0 0.15vw 0.30vw #8a428a);
+    animation: flamingo-blink 2s infinite alternate;  
+}
+
+
+
+@keyframes blink {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0   0.5vw #df74ff,
+        0.1vw 0 0.5vw #df74ff,
+        0.3vw 0 0.5vw #df74ff,
+    
+        0 0 1.2vw #c531ff,
+        0.1vw 0 1.2vw #c531ff,
+        0.3vw 0 1.2vw #c531ff,
+    
+    
+        0 0 3vw #ad04fb,
+        0.1vw 0 3vw #ad04fb,
+        0.3vw 0 3vw #ad04fb;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+  
+  @keyframes flamingo-blink {
+    0%, 9%, 15%, 79%, 83%, 100%{
+  
+        filter: 
+        drop-shadow(0 0.15vw 0.30vw #ff0ea3)
+        drop-shadow(0 0.15vw 0.30vw #8a428a);
+    
+    }
+    
+    10%, 14%, 80%, 82% {        
+        
+        filter: none;
+    }  
+  }
 
 
 
